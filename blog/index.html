@@ -11,91 +11,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>幸せok改造インスタンス</title>
-       <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff; 
-        }
-        header {
-            background-color: #87ceeb; 
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
-        nav {
-            background: #ffeb3b; 
-            color: black;
-            padding: 1em;
-            text-align: center;
-        }
-        nav a {
-            color: black;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        main {
-            padding: 20px;
-        }
-        .topic {
-            background: white;
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background: #87ceeb;
-            color: white;
-            text-align: center;
-            padding: 0.5em 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>期待値の解説</h1>
-</header>
-
-<nav>
-    <a href="#definition">期待値の定義</a>
-    <a href="#examples">例題</a>
-</nav>
-
-<main>
-    <section id="definition" class="topic">
-        <h2>期待値の定義</h2>
-        <p>期待値とは、確率変数がとる値の平均的な値のことです。確率論や統計学では、期待値は特定の状況で「平均」的な結果を表す指標として用いられます。</p>
-        <p>期待値は通常、確率変数をXとしたときにE(X)で表され、確率分布に基づいて計算されます。</p>
-    </section>
-
-    <section id="examples" class="topic">
-        <h2>例題</h2>
-        
-        <h3>例題1：サイコロの期待値</h3>
-        <p>サイコロを1回振ったときに出る目の期待値を求めます。</p>
-        <p>解: サイコロの出る目は1から6までの整数です。各目が出る確率は同じなので、期待値E(X)は次のように計算されます：</p>
-        <p>E(X) = (1 + 2 + 3 + 4 + 5 + 6) / 6 = 3.5</p>
-
-        <h3>例題2：偏ったコインの期待値</h3>
-        <p>偏ったコインで、表が出る確率が0.7、裏が出る確率が0.3のとき、表が出る回数の期待値を求めます。</p>
-        <p>解: 表が出る回数をXとすると、期待値E(X)は以下のように計算されます：</p>
-        <p>E(X) = 1 * 0.7 + 0 * 0.3 = 0.7</p>
-
-        <h3>例題3：2つのサイコロの和の期待値</h3>
-        <p>2つのサイコロを振ったときに出る目の和の期待値を求めます。</p>
-        <p>解: 各サイコロの期待値は3.5なので、和の期待値は 3.5 + 3.5 = 7 です。</p>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2024 期待値の解説　<font size="2px">幸せならokです！</font></p>
-</footer>
+    
+    
+    <style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f8ff; } header { background-color: #87ceeb; color: white; text-align: center; padding: 1em 0; } nav { background: #ffeb3b; color: black; padding: 1em;text-align: center; } nav a { color: black; margin: 0 15px; text-decoration: none; } main { padding: 20px; } .topic {background: white; margin: 20px 0; padding: 15px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); } footer{ background: #87ceeb; color: white; text-align: center; padding: 0.5em 0; position: fixed; width: 100%; bottom: 0; }</style> </head> <body> <header> <h1>条件付き確率の解説</h1> </header> <nav> <a href="#definition">条件付き確率の定義</a> <a href="#examples">例題</a> </nav> <main> <section id="definition" class="topic"> <h2>条件付き確率の定義</h2> <p>条件付き確率とは、ある事象Aが発生したときに、別の事象Bが発生する確率を示します。事象Aが既に起こっているという条件のもとで、事象Bの起こる確率を求める場合に用いられます。通常、条件付き確率は P(B|A) で表され、次のように計算されます。</p> <p><strong>P(B|A) = P(A ∩ B) / P(A)</strong> （ただし P(A) ≠ 0）</p> </section> <section id="examples" class="topic"> <h2>例題</h2> <h3>例題1：カードを引く確率</h3> <p>トランプのデッキから1枚のカードを引いたとき、そのカードがハートであるという条件のもとで、エースである確率を求めます。</p> <p>解: ハートのエースは1枚のみであり、ハートのカードは13枚あります。したがって、条件付き確率 P(エース|ハート) は以下のように計算されます。</p><p>P(エース|ハート) = 1 / 13</p> <h3>例題2：袋からボールを引く確率</h3> <p>赤と青のボールが入った袋があります。赤のボールが3つ、青のボールが2つです。この中からボールを1つ引き、そのボールを戻さずにさらにもう1つ引いたとき、最初のボールが赤であるという条件のもとで、次のボールも赤である確率を求めます。</p> <p>解: 最初に赤を引く確率は3/5です。その後、赤をもう1つ引く確率は残った赤の数が2つで、残りのボールが4つになるため、2/4です。</p> <p>条件付き確率は、P(2回目に赤|1回目が赤) = 2/4 = 1/2 です。</p><h3>例題3：病気の診断の確率</h3> <p>ある病気に感染する確率が1%で、その病気に感染している場合に陽性反応が出る確率が99%とします。一方で、感染していない場合に陽性反応が出る確率は5%です。このとき、ある人が陽性反応を示した場合に、その人が実際に病気に感染している確率を求めます。</p> <p>解: ベイズの定理を使用します。P(感染|陽性)を求めるために、以下を計算します。</p> <p>P(感染|陽性) = (P(陽性|感染) × P(感染)) / (P(陽性|感染) × P(感染) + P(陽性|非感染) × P(非感染))</p> <p>このようにして、実際の感染確率を求めることができます。</p> </section> </main> <footer> <p>&copy; 2024 条件付き確率の解説　<fontsize="2px">幸せならokです！</font></p> </footer>
+    
+    
+    
     <!-- Cookieの承認 -->
     <div id="cookie-notice" class="cookie-notice">
         このサイトではクッキーを使用しています。<br>
