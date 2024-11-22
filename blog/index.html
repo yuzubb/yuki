@@ -13,7 +13,38 @@
     <title>幸せok改造インスタンス</title>
     
     
-    <style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f8ff; } header { background-color: #87ceeb; color: white; text-align: center; padding: 1em 0; } nav { background: #ffeb3b; color: black; padding: 1em;text-align: center; } nav a { color: black; margin: 0 15px; text-decoration: none; } main { padding: 20px; } .topic {background: white; margin: 20px 0; padding: 15px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); } footer{ background: #87ceeb; color: white; text-align: center; padding: 0.5em 0; position: fixed; width: 100%; bottom: 0; }</style> </head> <body> <header> <h1>条件付き確率の解説</h1> </header> <nav> <a href="#definition">条件付き確率の定義</a> <a href="#examples">例題</a> </nav> <main> <section id="definition" class="topic"> <h2>条件付き確率の定義</h2> <p>条件付き確率とは、ある事象Aが発生したときに、別の事象Bが発生する確率を示します。事象Aが既に起こっているという条件のもとで、事象Bの起こる確率を求める場合に用いられます。通常、条件付き確率は P(B|A) で表され、次のように計算されます。</p> <p><strong>P(B|A) = P(A ∩ B) / P(A)</strong> （ただし P(A) ≠ 0）</p> </section> <section id="examples" class="topic"> <h2>例題</h2> <h3>例題1：カードを引く確率</h3> <p>トランプのデッキから1枚のカードを引いたとき、そのカードがハートであるという条件のもとで、エースである確率を求めます。</p> <p>解: ハートのエースは1枚のみであり、ハートのカードは13枚あります。したがって、条件付き確率 P(エース|ハート) は以下のように計算されます。</p><p>P(エース|ハート) = 1 / 13</p> <h3>例題2：袋からボールを引く確率</h3> <p>赤と青のボールが入った袋があります。赤のボールが3つ、青のボールが2つです。この中からボールを1つ引き、そのボールを戻さずにさらにもう1つ引いたとき、最初のボールが赤であるという条件のもとで、次のボールも赤である確率を求めます。</p> <p>解: 最初に赤を引く確率は3/5です。その後、赤をもう1つ引く確率は残った赤の数が2つで、残りのボールが4つになるため、2/4です。</p> <p>条件付き確率は、P(2回目に赤|1回目が赤) = 2/4 = 1/2 です。</p><h3>例題3：病気の診断の確率</h3> <p>ある病気に感染する確率が1%で、その病気に感染している場合に陽性反応が出る確率が99%とします。一方で、感染していない場合に陽性反応が出る確率は5%です。このとき、ある人が陽性反応を示した場合に、その人が実際に病気に感染している確率を求めます。</p> <p>解: ベイズの定理を使用します。P(感染|陽性)を求めるために、以下を計算します。</p> <p>P(感染|陽性) = (P(陽性|感染) × P(感染)) / (P(陽性|感染) × P(感染) + P(陽性|非感染) × P(非感染))</p> <p>このようにして、実際の感染確率を求めることができます。</p> </section> </main> <footer> <p>&copy; 2024 条件付き確率の解説　<fontsize="2px">幸せならokです！</font></p> </footer>
+<h1>2次方程式の解説</h1>
+    <p>2次方程式とは、変数 <code>x</code> を含む次の形式の方程式です:</p>
+    <p><strong>ax<sup>2</sup> + bx + c = 0</strong></p>
+    <p>ここで:</p>
+    <ul>
+        <li><code>a</code>, <code>b</code>, <code>c</code> は定数（<code>a ≠ 0</code>）。</li>
+        <li><code>x</code> は未知数（解を求める対象）。</li>
+    </ul>
+    <h2>解の公式</h2>
+    <p>2次方程式の解は次の公式を使って求めることができます:</p>
+    <p><strong>x = (-b ± √(b<sup>2</sup> - 4ac)) / 2a</strong></p>
+    <p>ここで:</p>
+    <ul>
+        <li><code>√</code> は平方根を意味します。</li>
+        <li><code>b<sup>2</sup> - 4ac</code> を「判別式」と呼びます。</li>
+    </ul>
+    <h2>判別式による解の性質</h2>
+    <p>判別式 <code>D = b<sup>2</sup> - 4ac</code> によって解の性質が決まります:</p>
+    <ul>
+        <li><code>D > 0</code>: 実数解が2つあります。</li>
+        <li><code>D = 0</code>: 実数解が1つ（重解）です。</li>
+        <li><code>D < 0</code>: 実数解はなく、虚数解が2つあります。</li>
+    </ul>
+    <h2>具体例</h2>
+    <p>例: 方程式 <strong>2x<sup>2</sup> - 4x + 2 = 0</strong></p>
+    <ol>
+        <li><code>a = 2</code>, <code>b = -4</code>, <code>c = 2</code> を確認。</li>
+        <li>判別式 <code>D = (-4)<sup>2</sup> - 4 × 2 × 2 = 16 - 16 = 0</code>。</li>
+        <li><code>D = 0</code> より、実数解が1つ（重解）。</li>
+        <li>解の公式に代入すると <code>x = 1</code>。</li>
+    </ol>
+    <p>このように解を求めます。</p>
     
     
     
