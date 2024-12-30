@@ -126,7 +126,7 @@ r"https://invidious.projectsegfau.lt",
 r"https://invidious.dhusch.de/",
 r"https://inv.odyssey346.dev/"
 ]
-url = requests.get(r'https://raw.githubusercontent.com/mochidukiyukimi/yuki-youtube-instance/main/instance.txt').text.rstrip()
+url = "https://yukibbs-server.onrender.com/"
 version = "1.0"
 
 os.system("chmod 777 ./yukiverify")
