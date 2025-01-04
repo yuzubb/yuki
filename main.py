@@ -219,7 +219,8 @@ def apicommentsrequest(url):
 video_apis = [
     r"https://invidious.jing.rocks/",
     r"https://invidious.nerdvpn.de/",
-   r"https://yewtu.be"
+    r"https://yewtu.be/"
+    r"https://invidious.f5.si/"
 ]
 
 # get_data 関数の変更
