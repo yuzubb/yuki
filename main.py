@@ -16,6 +16,7 @@ apis = [
     r"https://invidious.nerdvpn.de/",
     r"https://inv.nadeko.net/",
     r"https://invidious.jing.rocks/",
+    r"https://invidious.f5.si/",
 r"https://inv.vern.cc/",
 r"https://inv.zzls.xyz/",
 r"https://invi.susurrando.com/",
@@ -219,7 +220,7 @@ def apicommentsrequest(url):
 video_apis = [
     r"https://invidious.jing.rocks/",
     r"https://invidious.nerdvpn.de/",
-    r"https://yewtu.be/"
+    r"https://yewtu.be/",
     r"https://invidious.f5.si/"
 ]
 
