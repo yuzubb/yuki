@@ -104,7 +104,7 @@ def apicommentsrequest(url):
 # 動画取得用APIリストの作成
 video_apis = ast.literal_eval(requests.get('https://raw.githubusercontent.com/siawaseok3/yuki-by-siawaseok/refs/heads/main/api_list.txt').text)
 
-# get_data 関数の変更
+# 動画データを取得する関数
 def get_data(videoid):
     global logs
     t = json.loads(apirequest_video(r"api/v1/videos/" + urllib.parse.quote(videoid)))
@@ -121,16 +121,18 @@ def get_data(videoid):
         for i in t["recommendedVideos"]
     ]
 
-    # 結果を返す
-    return (
-        related_videos,  # 関連動画リスト
-        list(reversed([i["url"] for i in t["formatStreams"]]))[:2],  # 逆順で2つのストリームURLを取得
-        t["descriptionHtml"].replace("\n", "<br>"),  # 説明文に改行を追加
-        t["title"],  # 動画タイトル
-        t["authorId"],  # 作者ID
-        t["author"],  # 作者名
-        t["authorThumbnails"][-1]["url"],  # 最後のサムネイルURL
-        t["viewCount"]  # 動画の再生回数を追加
+    # 必要な情報をテンプレートに渡す
+    return render_template(
+        'video.html',
+        video_data=json.dumps(t),  # 動画データをJSON形式で渡す
+        related_videos=related_videos,  # 関連動画リスト
+        stream_urls=list(reversed([i["url"] for i in t["formatStreams"]]))[:2],  # 逆順で2つのストリームURL
+        description_html=t["descriptionHtml"].replace("\n", "<br>"),  # 説明文に改行を追加
+        title=t["title"],  # 動画タイトル
+        author_id=t["authorId"],  # 作者ID
+        author=t["author"],  # 作者名
+        author_thumbnail_url=t["authorThumbnails"][-1]["url"],  # 最後のサムネイルURL
+        view_count=t["viewCount"]  # 動画の再生回数
     )
 
 # 動画取得用APIリクエスト関数を作成
