@@ -108,6 +108,9 @@ video_apis = ast.literal_eval(requests.get('https://raw.githubusercontent.com/si
 def get_data(videoid):
     global logs
     t = json.loads(apirequest_video(r"api/v1/videos/" + urllib.parse.quote(videoid)))
+    print("受け取った動画データ全体:")
+　　 print(json.dumps(t, indent=4))  # JSON形式でインデントをつけて表示
+
 
     # 関連動画を解析してリストにする
     related_videos = [
