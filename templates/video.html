@@ -194,76 +194,54 @@
         <div id="comments"></div>
 
         <script>
-          const videoId = "{{ g_videoid }}";
-          const proxyUrl = `https://script.google.com/macros/s/AKfycbze0up1ubvD_tVJpmrB7Mjcgq2WV6ePxAoukrDNB5-e95UzBlLQE40JiJxP-UwAYBd1/exec?videoId=api/v1/videos/${videoId}`;
-
-          // 投稿日を日本語形式に変換
-          function formatDate(dateString) {
+          const videoData = JSON.parse('{{ video_data | tojson }}');
+        const relatedVideos = {{ related_videos | tojson }};
+        
+        // 投稿日を日本語形式に変換
+        function formatDate(dateString) {
             if (dateString.includes("months ago")) {
-              return dateString.replace("months ago", "ヶ月前");
+                return dateString.replace("months ago", "ヶ月前");
             } else if (dateString.includes("years ago")) {
-              return dateString.replace("years ago", "年前");
+                return dateString.replace("years ago", "年前");
             } else if (dateString.includes("minutes ago")) {
-              return dateString.replace("minutes ago", "分前");
+                return dateString.replace("minutes ago", "分前");
             } else if (dateString.includes("hours ago")) {
-              return dateString.replace("hours ago", "時間前");
+                return dateString.replace("hours ago", "時間前");
             } else if (dateString.includes("seconds ago")) {
-              return dateString.replace("seconds ago", "秒前");
+                return dateString.replace("seconds ago", "秒前");
             } else if (dateString.includes("month ago")) {
-              return dateString.replace("month ago", "ヶ月前");
+                return dateString.replace("month ago", "ヶ月前");
             } else if (dateString.includes("year ago")) {
-              return dateString.replace("year ago", "年前");
+                return dateString.replace("year ago", "年前");
             } else if (dateString.includes("minute ago")) {
-              return dateString.replace("minute ago", "分前");
+                return dateString.replace("minute ago", "分前");
             } else if (dateString.includes("hour ago")) {
-              return dateString.replace("hour ago", "時間前");
+                return dateString.replace("hour ago", "時間前");
             } else if (dateString.includes("second ago")) {
-              return dateString.replace("second ago", "秒前");
+                return dateString.replace("second ago", "秒前");
             } else {
-              return dateString; // 変換対象外の文字列
+                return dateString; // 変換対象外の文字列
             }
-          }
+        }
 
-          // 再生回数や高評価数を表示フォーマットに変換
-          function formatCount(count) {
+        // 再生回数や高評価数を表示フォーマットに変換
+        function formatCount(count) {
             const number = Number(count);
             if (number >= 1e8) {
-              return (number / 1e8).toFixed(1) + "億";
+                return (number / 1e8).toFixed(1) + "億";
             } else if (number >= 1e4) {
-              return (number / 1e4).toFixed(1) + "万";
+                return (number / 1e4).toFixed(1) + "万";
             }
             return number; // 1万未満の場合はそのまま表示
-          }
+        }
 
-          async function fetchVideoDetails() {
-            try {
-              const response = await fetch(proxyUrl);
-              if (!response.ok) {
-                throw new Error(`APIエラー: ${response.status}`);
-              }
-              const videoData = await response.json();
-
-              // 動画情報をHTMLに表示
-              document.getElementById("video-title").innerText =
-                videoData.title;
-              const publishedDate = formatDate(videoData.publishedText); // 日付をフォーマット
-              document.getElementById("published-date").innerText =
-                publishedDate;
-              document.getElementById("view-count").innerText = formatCount(
-                videoData.viewCount
-              );
-              document.getElementById("video-description").innerText =
-                videoData.description;
-              document.getElementById("like-count").innerText = formatCount(
-                videoData.likeCount
-              );
-            } catch (error) {
-              console.error("動画情報の取得中にエラーが発生しました:", error);
-            }
-          }
-
-          fetchVideoDetails();
-
+        // 動画情報をHTMLに表示
+        document.getElementById("video-title").innerText = videoData.title;
+        const publishedDate = formatDate(videoData.publishedText); // 日付をフォーマット
+        document.getElementById("published-date").innerText = publishedDate;
+        document.getElementById("view-count").innerText = formatCount(videoData.viewCount);
+        document.getElementById("video-description").innerHTML = videoData.description.replace("\n", "<br>");
+        
           // コメント取得のためのXMLHttpRequest
           var xhr = new XMLHttpRequest();
           xhr.open("GET", "/comments?v=" + videoId);
