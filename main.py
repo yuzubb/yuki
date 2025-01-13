@@ -11,7 +11,7 @@ from cache import cache
 
 max_api_wait_time = 8
 max_time = 12
-apis = ast.literal_eval(requests.get('URL').text)
+apis = ast.literal_eval(requests.get('https://raw.githubusercontent.com/siawaseok3/yuki-by-siawaseok/refs/heads/main/api_list.txt').text)
 url = "https://yukibbs-server.onrender.com/"
 version = "1.0"
 
@@ -102,7 +102,7 @@ def apicommentsrequest(url):
 
 
 # 動画取得用APIリストの作成
-video_apis = ast.literal_eval(requests.get('URL').text)
+video_apis = ast.literal_eval(requests.get('https://raw.githubusercontent.com/siawaseok3/yuki-by-siawaseok/refs/heads/main/api_list.txt').text)
 
 # get_data 関数の変更
 def get_data(videoid):
