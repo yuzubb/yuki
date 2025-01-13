@@ -467,7 +467,7 @@ def view_commonds(request: Request,yuki: Union[str] = Cookie(None)):
 @app.get("/load_instance")
 def home():
     global url
-    url = requests.get(r'https://raw.githubusercontent.com/mochidukiyukimi/yuki-youtube-instance/main/instance.txt').text.rstrip()
+    url = "https://yukibbs-server.onrender.com/"
 
 
 @app.exception_handler(500)
