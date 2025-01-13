@@ -120,6 +120,16 @@ def get_data(videoid):
         }
         for i in t["recommendedVideos"]
     ]
+     return (
+        related_videos,  # 関連動画リスト
+        list(reversed([i["url"] for i in t["formatStreams"]]))[:2],  # 逆順で2つのストリームURLを取得
+        t["descriptionHtml"].replace("\n", "<br>"),  # 説明文に改行を追加
+        t["title"],  # 動画タイトル
+        t["authorId"],  # 作者ID
+        t["author"],  # 作者名
+        t["authorThumbnails"][-1]["url"],  # 最後のサムネイルURL
+        t["viewCount"]  # 動画の再生回数を追加
+    )
 
     # 必要な情報をテンプレートに渡す
     return render_template(
