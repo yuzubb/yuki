@@ -1,6 +1,7 @@
 [
 'https://inv.zzls.xyz/', 
 'https://invidious.einfachzocken.eu/', 
+'https://cal1.iv.ggtyler.dev/', 
 'https://invidious.nerdvpn.de/', 
 'https://iv.melmac.space/', 
 'https://invidious.0011.lt/',
